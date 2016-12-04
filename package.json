@@ -1,6 +1,6 @@
 {
   "name": "@jacobmarshall/human-time",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Display time in a human-readable format.",
   "main": "index.js",
   "scripts": {
