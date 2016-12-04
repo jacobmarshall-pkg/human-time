@@ -6,8 +6,20 @@ var human = require('../');
 
 var rel;
 
-rel = human(600);
-assert.equal(rel, '10 minutes ago');
-
 rel = human(new Date());
-assert.equal(rel, '0 seconds ago');
+assert.equal(rel, 'just now');
+
+rel = human(new Date(), false);
+assert.equal(rel, 'now');
+
+rel = human(new Date(Date.now() - 6000));
+assert.equal(rel, '6 seconds ago');
+
+rel = human(new Date(Date.now() - 6000), false);
+assert.equal(rel, '6 seconds');
+
+rel = human(new Date(Date.now() + 6000));
+assert.equal(rel, '6 seconds from now');
+
+rel = human(new Date(Date.now() + 3000), false);
+assert.equal(rel, '3 seconds');

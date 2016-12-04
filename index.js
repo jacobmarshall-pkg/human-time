@@ -7,14 +7,15 @@
  * License: MIT
  */
 
-var util = require('util');
-
 module.exports = human;
 
-function human(seconds) {
-  if (seconds instanceof Date)
-    seconds = Math.round((Date.now() - seconds) / 1000);
-  var suffix = seconds < 0 ? 'from now' : 'ago';
+function human(date, includeSuffix) {
+  if (typeof includeSuffix === 'undefined') {
+    includeSuffix = true;
+  }
+
+  var seconds = Math.round((Date.now() - date) / 1000);
+  var suffix = includeSuffix ? (' ' + (seconds < 0 ? 'from now' : 'ago')) : '';
   seconds = Math.abs(seconds);
 
   var times = [
@@ -31,9 +32,10 @@ function human(seconds) {
   for (var i = 0; i < names.length; i++) {
     var time = Math.floor(times[i]);
     if (time > 1)
-      return util.format('%d %ss %s', time, names[i], suffix);
+      return time + ' ' + names[i] + 's' + suffix;
     else if (time === 1)
-      return util.format('%d %s %s', time, names[i], suffix);
+      return time + ' ' + names[i] + suffix;
   }
-  return util.format('0 seconds %s', suffix);
+
+  return includeSuffix ? 'just now' : 'now';
 }

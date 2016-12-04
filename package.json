@@ -1,14 +1,14 @@
 {
-  "name": "human-time",
+  "name": "@jacobmarshall/human-time",
   "version": "0.0.1",
   "description": "show seconds in a human-readable form",
-  "main": "human.js",
+  "main": "index.js",
   "scripts": {
     "test": "node tests/javascript.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bahamas10/human.git"
+    "url": "https://github.com/jacobmarshall-pkg/human-time.git"
   },
   "keywords": [
     "human",
@@ -18,9 +18,12 @@
     "time"
   ],
   "author": "Dave Eddy <dave@daveeddy.com> (http://www.daveeddy.com)",
+  "contributors": [
+    "Jacob Marshall <git@jacobmarshall.co> (https://jacobmarshall.co)"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bahamas10/human/issues"
+    "url": "https://github.com/jacobmarshall-pkg/human-time/issues"
   },
-  "homepage": "https://github.com/bahamas10/human"
+  "homepage": "https://github.com/jacobmarshall-pkg/human-time"
 }
