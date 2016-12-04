@@ -21,6 +21,9 @@
   "contributors": [
     "Jacob Marshall <git@jacobmarshall.co> (https://jacobmarshall.co)"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jacobmarshall-pkg/human-time/issues"
